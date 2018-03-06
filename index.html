@@ -1,1 +1,55 @@
 <h1>Hello test</h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="../node_modules/web3/dist/web3.min.js"></script>
+    <script>
+      window.addEventListener('load', function() {
+
+          // Checking if Web3 has been injected by the browser (Mist/MetaMask)
+          
+          if (typeof web3 !== 'undefined') {
+
+            // Use the browser's ethereum provider
+            var provider = web3.currentProvider
+            console.log(provider);
+
+          } else {
+            console.log('No web3? You should consider trying MetaMask!')
+          }
+
+        })
+
+
+     
+    </script>
+
+     <script>
+
+        // Previous if/else statement removed for brevity
+
+        //web3.eth.defaultAccount = web3.eth.accounts[0];
+
+        //console.log(web3.eth.getBlock(2009900));
+
+        //web3.eth.getAccounts();
+
+
+    </script>
+
+</head>
+<body>
+   <h1>ETH Balance Fetcher</h1>
+    <p>Enter your Ethereum Address:</p>
+    <input type="text" size="50" id="address" />
+    <button type="button" onClick="getBalance();">Get Balance</button>
+    <br />
+    <br />
+    <div id="output"></div>
+
+</body>
+</html>
