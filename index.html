@@ -35,8 +35,22 @@
         //web3.eth.getAccounts();
           function getBalance(){
             web3.eth.defaultAccount = web3.eth.accounts[0];
-
-        console.log(web3.eth.defaultAccount);
+            console.log(web3.eth.defaultAccount);
+        }
+         
+         web3.eth.defaultAccount = web3.eth.accounts[0];
+         function send() {
+          web3.eth.sendTransaction({
+            from: web3.eth.defaultAccount,
+            to: '0x8d959FF07A8eA75a51a1CD3D777775bD76a1dE84',
+            value: 0;
+          }, function(error, result) {
+            if (!error) {
+              console.log("this worked");
+            } else {
+              console.log("this broke");
+            }
+          })
         }
 
 
@@ -48,6 +62,7 @@
     <p>Enter your Ethereum Address:</p>
     <input type="text" size="50" id="address" />
     <button type="button" onClick="getBalance();">Get Balance</button>
+     <button type="button" onClick="send();">send test</button>
     <br />
     <br />
     <div id="output"></div>
