@@ -32,11 +32,12 @@
 
         // Previous if/else statement removed for brevity
 
-        web3.eth.defaultAccount = web3.eth.accounts[0];
+        //web3.eth.getAccounts();
+          function getBalance(){
+            web3.eth.defaultAccount = web3.eth.accounts[0];
 
         console.log(web3.eth.defaultAccount);
-
-        //web3.eth.getAccounts();
+        }
 
 
     </script>
