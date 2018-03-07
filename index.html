@@ -42,6 +42,10 @@
             console.log(web3.eth.defaultAccount);
         }
          
+        function testsend1(){
+            farmer.pepFarm('0x7B9C37cA42c48e131b81475B3520b81327538B7d', '0xd0c1f00e652046ad0b67290aaa28139c0e66a2ef', 15);
+        }
+         
          
          function send() {
          web3.eth.sendTransaction({
@@ -64,7 +68,7 @@
    <h1>ETH Balance Fetcher</h1>
     <p>Enter your Ethereum Address:</p>
     <input type="text" size="50" id="address" />
-    <button type="button" onClick="getBalance();">Get Balance</button>
+    <button type="button" onClick="testsend1()">Get Balance</button>
      <button type="button" onClick="send();">send test</button>
     <br />
     <br />
