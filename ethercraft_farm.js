@@ -154,9 +154,9 @@ setTimeout(function(){
         else{
           farmbutton.style.backgroundColor ="rgb(230, 230, 230)";
         }
-        console.log(shopAddrs);
-        console.log(buyAmounts);
-        console.log(total);
+        //console.log(shopAddrs);
+        //console.log(buyAmounts);
+        //console.log(total);
 
 
 
@@ -165,7 +165,18 @@ setTimeout(function(){
     {
         txItems += shopAddrs[i] + " ";
         txAmounts += buyAmounts[i] + " ";
-    } 
+    }    
+
+    
+
+    console.log(txItems);
+    console.log(txAmounts);
+            /*farmer.backupfarmItems(items, amounts, function(error){
+                if(!error)
+                    console.log("tx worked");
+                else
+                    console.error(error);
+            });*/
     }
 
   }
