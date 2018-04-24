@@ -1,0 +1,271 @@
+body {
+    background-image: url('imgs/background.png');
+    /* pixelated enlargement filter (to keep the pixel-art style when enlarging pictures) */
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: pixelated;
+    /* default font */
+    font-family: 'Press Start 2P', cursive;
+}
+
+.rpgui-container {
+    align-content: center;
+    text-align: center;
+    position: relative;
+}
+
+#helper1{
+    display: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #FFFFFF;
+    opacity: 0.8; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #FFFFFF;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #FFFFFF;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    margin-top: 10px;
+}
+
+.shop-item {
+    height: 320px; /* 225px - 250px; */
+    width: 225px;
+    margin: 25px;
+    text-align: center;
+
+    color: white;
+    -webkit-text-stroke-width: 0.125px;
+    -webkit-text-stroke-color: black;
+
+    /* border */
+    border-style: solid;
+    border-image-source: url('imgs/shop.png');
+    border-image-repeat: repeat;
+    border-image-slice: 7 7 7 7;
+    border-image-width: 18px;
+    border-width: 15px;
+    padding: 10px;
+    /* internal border */
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    /* background */
+    background: #523327;
+
+    background-clip: padding-box;
+    background-origin: padding-box;
+    background-position: center;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+    color: white;
+    border: 2px solid black;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.button-success {
+    background: rgb(28, 184, 65); /* this is a green */
+}
+
+.button-error {
+    background: rgb(202, 60, 60); /* this is a maroon */
+}
+
+.button-warning {
+    background: rgb(223, 117, 20); /* this is an orange */
+}
+
+.button-secondary {
+    background: rgb(66, 184, 221); /* this is a light blue */
+}
+
+.pure-button-disabled
+{
+    background: #bbafad !important;
+    opacity: .75;
+}
+
+.item-name, .item-price
+{
+    line-height: 17px;
+    margin-top: 10px;
+    color: gold !important;
+}
+
+.helper{
+    font-family: "Arial", Arial, sans-serif !important;
+    font-size: 18px !important;
+}
+
+.item-type
+{
+    color: grey;
+    margin-top: 10px;
+    image-rendering: pixelated;
+    font-family: 'Press Start 2P',cursive;
+    text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+
+}
+
+.shop-item .wrapper, .wrapper {
+    margin: 0;
+    margin-bottom: 50px;
+    text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+}
+
+.total
+{
+    color: white;
+    margin-top: 10px;
+}
+
+.shop-timer, [data-is="shop-item"] .shop-timer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    font-size: 1.2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 18px;
+    background: #FFFFFF;
+    color: #000000;
+    z-index: 1000;
+    padding-top: 2px;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+    cursor: url(RPGUI-master/dist/img/cursor/point.png) 10 0, auto;
+}
+    
+
+
+
+}
+.shop-timer:hover {
+    background-color: #f8f8f8;
+
+}
+
+.menu-1{
+    text-align: center;
+    margin-top: 30px;
+}
+.menu{
+    text-align: center;
+    margin-top: 5px;
+}
+
+
+.c-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.c-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #000000;
+    margin-top: 10px;
+    cursor: url(RPGUI-master/dist/img/cursor/point.png) 10 0, auto;
+}
+
+/* On mouse-over, add a grey background color */
+.c-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.c-container input:checked ~ .checkmark {
+    background-color: gold;
+}
+
+.checker{
+    display: none;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.c-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.c-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #000000;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+input{
+
+    margin-top: 10px;
+}
+
+.withdraw-screen{
+    display: none
+}
+.farmer-screen{
+
+}
+
+#logo-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
