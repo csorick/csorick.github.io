@@ -27,7 +27,7 @@
 
      <script>
          web3.eth.defaultAccount = web3.eth.accounts[0];
-         console.log(web3.eth.defaultAccount);
+         //console.log(web3.eth.defaultAccount);
          
          var farmerContract = web3.eth.contract([{"constant":false,"inputs":[{"name":"shop_addresses","type":"address[]"},{"name":"buy_amounts","type":"uint256[]"}],"name":"farmItems2","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"shops","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"shop_addresses","type":"address[]"},{"name":"token_addresses","type":"address[]"}],"name":"set_Shops","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"shop_addresses","type":"address[]"}],"name":"initialBuy","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"total_buy","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"token_addresses","type":"address[]"}],"name":"withdrawTokens","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"address"}],"name":"tokenInventory","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"shop_addresses","type":"address[]"},{"name":"buy_amounts","type":"uint256[]"}],"name":"farmItems","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"buy_val","type":"uint256"}],"name":"set_Total","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"gas_val","type":"uint256"}],"name":"set_Gas","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"shop_addresses","type":"address[]"},{"name":"buy_amounts","type":"uint256[]"}],"name":"backupfarmItems","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"gas_amount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"anonymous":false,"inputs":[{"indexed":true,"name":"previousOwner","type":"address"},{"indexed":true,"name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"}]);
          
@@ -35,7 +35,7 @@
          console.log("this is farmer");
          console.log(farmer);
          
-         function getBalance(){
+        function getBalance(){
             web3.eth.defaultAccount = web3.eth.accounts[0];
             console.log(web3.eth.defaultAccount);
         }
@@ -75,7 +75,7 @@
     <p>Enter your Ethereum Address:</p>
     <input type="text" size="50" id="address" />
     <input type="number" name="quantity" min="1" max="100" id="amount">
-    <button type="button" onClick="testsend1()">Get Balance</button>
+    <button type="button" onClick="getBalance()">Get Balance</button>
      <button type="button" onClick="send();">send test</button>
     <br />
     <br />
