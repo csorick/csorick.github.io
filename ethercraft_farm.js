@@ -153,14 +153,15 @@ setTimeout(function(){
 
       console.log(txItems);
       console.log(txAmounts);
+      console.log(farmer);
 
 
-      farmer.backupfarmItems(txItems, txAmounts, function(error){
+      /*farmer.backupfarmItems(txItems, txAmounts, function(error){
         if(!error)
             console.log("tx worked");
         else
             console.error(error);
-      });
+      });*/
     },
 
   testsend2: function (){
