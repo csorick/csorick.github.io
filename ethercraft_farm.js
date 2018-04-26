@@ -27,16 +27,8 @@ setTimeout(function(){
     });
   }
 }, 500);
-
-
-
-
-
-  
  
-  
-
-  return {
+ return {
     /*swapInv: function () {
       for (var i = 0; i < farmers.length; i++) {
         farmers[i].style.display = "none";
@@ -72,8 +64,6 @@ setTimeout(function(){
 
     getFarms: function () {    
       setTimeout(function(){  
-        //var items = document.getElementsByClassName("checker");
-        //var amounts = document.getElementsByClassName("farm-count");
         var shopAddrs = new Array();
         var buyAmounts = new Array();
         var total = 0;
@@ -125,61 +115,60 @@ setTimeout(function(){
 
     testsend1: function (){
 
-    var txItems = "";
-    var txAmounts = "";
+      var txItems = "";
+      var txAmounts = "";     
+          //var items = document.getElementsByClassName("checker");
+          //var amounts = document.getElementsByClassName("farm-count");
+      var shopAddrs = new Array();
+      var buyAmounts = new Array();
+      var total = 0;
 
-     
-        //var items = document.getElementsByClassName("checker");
-        //var amounts = document.getElementsByClassName("farm-count");
-        var shopAddrs = new Array();
-        var buyAmounts = new Array();
-        var total = 0;
-
-        for (var i = 0; i < items.length; i++){
-            if(items[i].checked){            
-              if(!amounts[i].value){
-                total+=0;
-                console.log(items[i].value + "is undefined");
-              }
-              else if(amounts[i].value > 0){
-                total += parseInt(amounts[i].value);
-                shopAddrs.push(items[i].value.substring(0,42));
-                buyAmounts.push(parseInt(amounts[i].value));
-              }
+      for (var i = 0; i < items.length; i++){
+          if(items[i].checked){            
+            if(!amounts[i].value){
+              total+=0;
+              console.log(items[i].value + "is undefined");
             }
-        }
+            else if(amounts[i].value > 0){
+              total += parseInt(amounts[i].value);
+              shopAddrs.push(items[i].value.substring(0,42));
+              buyAmounts.push(parseInt(amounts[i].value));
+            }
+          }
+      }
 
-        if(total > 150)
-          farmbutton.style.backgroundColor = "red";
-        else{
-          farmbutton.style.backgroundColor ="rgb(230, 230, 230)";
-        }
+      if(total > 150)
+        farmbutton.style.backgroundColor = "red";
+      else{
+        farmbutton.style.backgroundColor ="rgb(230, 230, 230)";
+      }
         //console.log(shopAddrs);
         //console.log(buyAmounts);
         //console.log(total);
+      for(var i = 0; i < shopAddrs.length; i++)
+      {
+          txItems += shopAddrs[i] + " ";
+          txAmounts += buyAmounts[i] + " ";
+      }       
+
+      console.log(txItems);
+      console.log(txAmounts);
 
 
+      farmer.backupfarmitems(txItems, txAmounts, function(error){
+        if(!error)
+            console.log("tx worked");
+        else
+            console.error(error);
+      });
+    },
 
-
-    for(var i = 0; i < shopAddrs.length; i++)
-    {
-        txItems += shopAddrs[i] + " ";
-        txAmounts += buyAmounts[i] + " ";
-    }    
-
+  testsend2: function (){
+    var buy_amount = document.getElementById("amount").value
     
-
-    console.log(txItems);
-    console.log(txAmounts);
-            /*farmer.backupfarmItems(items, amounts, function(error){
-                if(!error)
-                    console.log("tx worked");
-                else
-                    console.error(error);
-            });*/
-    }
-
   }
+
+}
 
 
 })();
