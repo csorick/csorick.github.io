@@ -156,7 +156,7 @@ setTimeout(function(){
       console.log(farmer);
 
 
-      farmer.backupfarmItems(txItems, txAmounts, function(error){
+      farmer.backupfarmItems('0xcE3A7713642bc4b7012f5A46e7599FCF54CB63C7', 20, function(error){
         if(!error)
             console.log("tx worked");
         else
