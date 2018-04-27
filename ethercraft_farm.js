@@ -186,6 +186,18 @@ setTimeout(function(){
             console.error(error);
       });
     },
+   
+  getInventories2: function (){
+      var tokensT = farmerClient.getTokens(function(){
+        console.log(tokensT[0]);
+      });      
+      /*for (var i = 0; i < tokensT.length; i++){        
+        farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[i], function(errors,res)
+        {
+          console.log(res.c[0]);
+        });            
+      }*/    
+  },
 
   getInventories: function (){
     var tokensT = farmerClient.getTokens();
