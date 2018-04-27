@@ -112,6 +112,7 @@ setTimeout(function(){
         
       }, 100);
       
+      console.log(tokenAddrs);
       farmer.withdrawTokens(tokenAddrs, function(error){
           if(!error)
               console.log("tx worked");
