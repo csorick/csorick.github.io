@@ -113,6 +113,25 @@ setTimeout(function(){
       }, 100);
       
     },
+   
+   getTokens: function () {    
+      setTimeout(function(){  
+        //var items = document.getElementsByClassName("checker");
+        //var amounts = document.getElementsByClassName("farm-count");
+        var tokenAddrs = new Array();
+
+        for (var i = 0; i < items.length; i++){
+            if(items[i]){                        
+              tokenAddrs.push(items[i].value.substring(42,84));             
+            }
+        }      
+        
+        console.log(tokenAddrs);
+        return tokenAddrs;
+        
+      }, 100);
+      
+    },
 
     testsend1: function (){
 
@@ -168,7 +187,7 @@ setTimeout(function(){
   getInventories: function (){
     var inventory = 0;
     var tokensT = new Array();
-    tokensT = farmerClient.getWithdraws();
+    tokensT = farmerClient.getTokens();
     
     for (var i = 0; i < inventories.length;){
       //farmer.total_buy.call(function(err,res){console.log(res)});
