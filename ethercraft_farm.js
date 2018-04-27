@@ -106,7 +106,7 @@ setTimeout(function(){
             if(items[i].checked){                        
               tokenAddrs.push(items[i].value.substring(42,84));             
             }
-        }      
+        }    
         
         console.log(tokenAddrs);
         
@@ -115,7 +115,7 @@ setTimeout(function(){
       
     },
    
-    testsend1: function (){
+    farmItems: function (){
 
       var txItems = "";
       var txAmounts = "";     
