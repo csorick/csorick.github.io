@@ -192,7 +192,7 @@ setTimeout(function(){
     var tokensT = new Array();
     tokensT = farmerClient.getTokens();
     
-    for (var i = 0; i < inventories.length;){
+    for (var i = 0; i < tokensT.length;){
       //farmer.total_buy.call(function(err,res){console.log(res)});
       /*farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF","0x9c10e2c8c583e74f3513cce5d68cb6d162a8062e", function(errors,res)
       {
