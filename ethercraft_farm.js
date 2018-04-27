@@ -200,7 +200,7 @@ setTimeout(function(){
       {
         console.log(res.c[0]);
       });
-      setTimeout(function(){}, 50); 
+      setTimeout(function(){}, 100); 
       //console.log(tokensT[i]);
      
     }            
