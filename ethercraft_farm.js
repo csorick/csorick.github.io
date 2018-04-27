@@ -159,7 +159,7 @@ setTimeout(function(){
             }
           }
       }
-      if(shopAddrs.length => 1){
+      
         if(total > 150)
           farmbutton.style.backgroundColor = "red";
         else{
@@ -185,7 +185,7 @@ setTimeout(function(){
           else
               console.error(error);
         });
-      }
+      
     },
    
   getTokensL: function() {
