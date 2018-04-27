@@ -56,14 +56,14 @@ function getInventoriesL(){
         
     setTimeout(function(){
         var tokensT = getTokensL();
-        //console.log("dog test");
-        //console.log(tokensT);
+        console.log("dog test");
+        console.log(tokensT);
         setTimeout(function(){
             //console.log("this is individual tokensT" + tokensT[0]);
 
             farmer2.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[0], function(errors, res)
             {
-              //console.log("this is inside token amount " + res.c[0]);
+              console.log("this is inside token amount " + res.c[0]);
             });
         }, 100); 
     }, 100);          
@@ -104,7 +104,7 @@ function getInventoriesL(){
 
     <div class="menu">
         <button class="button-primary pure-button" id="farmbutton" onclick="farmerClient.testsend1();">FARM</button>
-        <button class="button-primary pure-button" id="withdrawbutton" onclick="farmerClient.getWithdraws();">WITHDRAW</button>        
+        <button class="button-primary pure-button" id="withdrawbutton" onclick="getInventoriesL();">WITHDRAW</button>        
     </div>
 
     <div class="rpgui-container framed center withdraw-screen" id="helper1" style="height:900px; width:780px; text-align: left;">
