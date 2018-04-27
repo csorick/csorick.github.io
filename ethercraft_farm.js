@@ -189,18 +189,22 @@ setTimeout(function(){
 
   getInventories: function (){
     var inventory = 0;
-    var tokensT = new Array();
-    tokensT = farmerClient.getTokens();
+    var tokensT = farmerClient.getTokens();
+
+    setTimeout(function(){    
     
-    for (var i = 0; i < tokensT.length;){
+    for (var i = 0; i < tokensT.length; i++){
       //farmer.total_buy.call(function(err,res){console.log(res)});
-      /*farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF","0x9c10e2c8c583e74f3513cce5d68cb6d162a8062e", function(errors,res)
+      farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[i], function(errors,res)
       {
         console.log(res);
-      });*/
-      console.log(tokensT[i]);
+      });
+      //console.log(tokensT[i]);
      
-    }
+    }            
+        
+      }, 100); 
+    
     
   }
 
