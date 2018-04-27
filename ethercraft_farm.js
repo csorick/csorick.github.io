@@ -115,27 +115,6 @@ setTimeout(function(){
       
     },
    
-   getTokens: function () {
-      var tokenAddrs = new Array();
-      setTimeout(function(){  
-        //var items = document.getElementsByClassName("checker");
-        //var amounts = document.getElementsByClassName("farm-count");
-       
-
-        for (var i = 0; i < items.length; i++){
-            if(items[i]){                        
-              tokenAddrs.push(items[i].value.substring(42,84));             
-            }
-        }      
-        
-        //console.log(tokenAddrs);
-        
-        
-      }, 100);
-     return tokenAddrs;
-      
-    },
-
     testsend1: function (){
 
       var txItems = "";
@@ -189,7 +168,7 @@ setTimeout(function(){
       
     },
    
-  getTokensL: function() {
+  getTokens: function() {
       var tokenAddrs = new Array();
       setTimeout(function(){  
         //var items = document.getElementsByClassName("checker");
@@ -210,10 +189,10 @@ setTimeout(function(){
       
     },
 
-getInventoriesL: function(){
+getInventories: function(){
         
     setTimeout(function(){
-        var tokensT = farmerClient.getTokensL();
+        var tokensT = farmerClient.getTokens();
         console.log("dog test");
         console.log(tokensT);
         var addrFinals = new Array();
