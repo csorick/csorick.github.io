@@ -97,20 +97,15 @@ setTimeout(function(){
 
     getWithdraws: function () {
       var tokenAddrs = new Array();
-      setTimeout(function(){  
-        //var items = document.getElementsByClassName("checker");
-        //var amounts = document.getElementsByClassName("farm-count");
+      for (var i = 0; i < items.length; i++){
+          if(items[i].checked){                        
+            tokenAddrs.push(items[i].value.substring(42,84));             
+          }
+      }    
         
-
-        for (var i = 0; i < items.length; i++){
-            if(items[i].checked){                        
-              tokenAddrs.push(items[i].value.substring(42,84));             
-            }
-        }    
+        //console.log(tokenAddrs);      
         
-        console.log(tokenAddrs);      
-        
-      }, 100);
+      
       
       console.log(tokenAddrs);
       farmer.withdrawTokens(tokenAddrs, function(error){
