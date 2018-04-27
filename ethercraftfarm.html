@@ -29,7 +29,7 @@
         var farmer2 = farmerContract2.at('0x06050D23DdC685c9E695216B7229ceD5d85d6923');
         
         var items = document.getElementsByClassName("checker");
-var inventories = document.getElementsByClassName("total");
+        var inventories = document.getElementsByClassName("total");
         
 
 
@@ -99,6 +99,11 @@ function getInventoriesL(){
             
         }, 100); 
         console.log(addrFinals);
+        console.log(inventories);
+        for (var i = 0; i < inventories.length; i++){
+            inventories[i].innerHTML = addrFinals[i];
+        }
+        
     }, 100);          
           
   }
