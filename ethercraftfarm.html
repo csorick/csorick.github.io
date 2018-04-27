@@ -30,6 +30,8 @@
         
         var items = document.getElementsByClassName("checker");
 var inventories = document.getElementsByClassName("total");
+        
+
 
 function getTokensL() {
       var tokenAddrs = new Array();
@@ -58,17 +60,19 @@ function getInventoriesL(){
         var tokensT = getTokensL();
         console.log("dog test");
         console.log(tokensT);
+        var addrFinals = new Array();
         setTimeout(function(){
             console.log("this is individual tokensT" + tokensT[0]);
             for (var i = 0; i < tokensT.length; i++){
                 
                     farmer2.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[i], function(errors, res)
                     {
-                      console.log("this is inside token amount " + res.c[0]);
-                    });
-                setTimeout(function(){}, 50); 
+                      //console.log("this is inside token amount " + res.c[0]);
+                      addrFinals.push(res.c[0]);
+                    });                
             }
         }, 100); 
+        console.log(addrFinals);
     }, 100);          
           
   }
