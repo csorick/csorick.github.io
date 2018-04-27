@@ -192,7 +192,7 @@ setTimeout(function(){
     var tokensT = farmerClient.getTokens();
 
     setTimeout(function(){
-     }, 100);
+     
     
     for (var i = 0; i < tokensT.length; i++){
       //farmer.total_buy.call(function(err,res){console.log(res)});
@@ -205,7 +205,8 @@ setTimeout(function(){
       setTimeout(function(){}, 100); 
       //console.log(tokensT[i]);
      
-    }            
+    } 
+      }, 100);
         
        
     
