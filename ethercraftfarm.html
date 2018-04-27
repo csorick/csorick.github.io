@@ -54,7 +54,10 @@ function getTokensL() {
 
 function getInventoriesL(){
       var tokensT = getTokensL();
-      console.log(tokensT);     
+      console.log(tokensT);  
+    setTimeout(function(){
+        console.log(tokensT[0]);
+    }, 100);
       for (var i = 0; i < tokensT.length; i++){        
         farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[i], function(errors,res)
         {
