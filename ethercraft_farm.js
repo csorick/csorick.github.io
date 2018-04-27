@@ -187,16 +187,82 @@ setTimeout(function(){
       });
     },
    
-  getInventories2: function (){
-      var tokensT = farmerClient.getTokens(function(){
-        console.log(tokensT[0]);
-      });      
-      /*for (var i = 0; i < tokensT.length; i++){        
-        farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[i], function(errors,res)
-        {
-          console.log(res.c[0]);
-        });            
-      }*/    
+  getTokensL: function() {
+      var tokenAddrs = new Array();
+      setTimeout(function(){  
+        //var items = document.getElementsByClassName("checker");
+        //var amounts = document.getElementsByClassName("farm-count");
+       
+
+        for (var i = 0; i < items.length; i++){
+            if(items[i]){                        
+              tokenAddrs.push(items[i].value.substring(42,84));             
+            }
+        }      
+        
+        //console.log(tokenAddrs);
+        
+        
+      }, 100);
+     return tokenAddrs;
+      
+    },
+
+getInventoriesL: function(){
+        
+    setTimeout(function(){
+        var tokensT = farmerClient.getTokensL();
+        console.log("dog test");
+        console.log(tokensT);
+        var addrFinals = new Array();
+        setTimeout(function(){
+            console.log("this is individual tokensT" + tokensT[0]);
+            
+                
+            farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[0], function(errors, res)
+            {
+              //console.log("this is inside token amount " + res.c[0]);
+              addrFinals.push(res.c[0]);
+              inventories[0].innerHTML = res.c[0];
+                farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[1], function(errors, res)
+                {
+                  //console.log("this is inside token amount " + res.c[0]);
+                  addrFinals.push(res.c[0]);
+                    inventories[1].innerHTML = res.c[0];
+                    farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[2], function(errors, res)
+                    {
+                      //console.log("this is inside token amount " + res.c[0]);
+                        addrFinals.push(res.c[0]);
+                        inventories[2].innerHTML = res.c[0];
+                        farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[3], function(errors, res)
+                        {
+                          //console.log("this is inside token amount " + res.c[0]);
+                          addrFinals.push(res.c[0]);
+                            inventories[3].innerHTML = res.c[0];
+                            farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[4], function(errors, res)
+                            {
+                              //console.log("this is inside token amount " + res.c[0]);
+                              addrFinals.push(res.c[0]);
+                                inventories[4].innerHTML = res.c[0];
+                                farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[5], function(errors, res)
+                                {
+                                  //console.log("this is inside token amount " + res.c[0]);
+                                  addrFinals.push(res.c[0]);
+                                    inventories[5].innerHTML = res.c[0];
+                                });
+                            });
+                        });
+                    });
+                    
+                });   
+            });                
+            
+        }, 100); 
+        console.log("this is addr final" + addrFinals);
+        
+        
+    }, 100);          
+          
   },
 
   getInventories: function (){
