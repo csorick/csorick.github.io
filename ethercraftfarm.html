@@ -73,6 +73,27 @@ function getInventoriesL(){
                 {
                   //console.log("this is inside token amount " + res.c[0]);
                   addrFinals.push(res.c[0]);
+                    farmer2.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[2], function(errors, res)
+                    {
+                      //console.log("this is inside token amount " + res.c[0]);
+                        addrFinals.push(res.c[0]);
+                        farmer2.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[3], function(errors, res)
+                        {
+                          //console.log("this is inside token amount " + res.c[0]);
+                          addrFinals.push(res.c[0]);
+                            farmer2.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[4], function(errors, res)
+                            {
+                              //console.log("this is inside token amount " + res.c[0]);
+                              addrFinals.push(res.c[0]);
+                                farmer2.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[5], function(errors, res)
+                                {
+                                  //console.log("this is inside token amount " + res.c[0]);
+                                  addrFinals.push(res.c[0]);
+                                });
+                            });
+                        });
+                    });
+                    
                 });   
             });                
             
