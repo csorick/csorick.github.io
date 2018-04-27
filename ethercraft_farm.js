@@ -167,8 +167,12 @@ setTimeout(function(){
     },
 
   getInventories: function (){
-    var account = web3.eth.defaultAccount;
-    console.log(account);
+    var inventory = 0;
+    for (var i = 0; i < inventories.length;){
+      //farmer.total_buy.call(function(err,res){console.log(res)});
+      inventories[i].set
+    }
+    
   }
 
 }
