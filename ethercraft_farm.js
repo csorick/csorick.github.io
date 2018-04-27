@@ -128,7 +128,7 @@ setTimeout(function(){
             }
         }      
         
-        console.log(tokenAddrs);
+        //console.log(tokenAddrs);
         
         
       }, 100);
