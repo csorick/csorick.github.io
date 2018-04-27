@@ -159,32 +159,33 @@ setTimeout(function(){
             }
           }
       }
+      if(shopAddrs.length => 1){
+        if(total > 150)
+          farmbutton.style.backgroundColor = "red";
+        else{
+          farmbutton.style.backgroundColor ="rgb(230, 230, 230)";
+        }
+          //console.log(shopAddrs);
+          //console.log(buyAmounts);
+          //console.log(total);
+        for(var i = 0; i < shopAddrs.length; i++)
+        {
+            txItems += shopAddrs[i] + " ";
+            txAmounts += buyAmounts[i] + " ";
+        }       
 
-      if(total > 150)
-        farmbutton.style.backgroundColor = "red";
-      else{
-        farmbutton.style.backgroundColor ="rgb(230, 230, 230)";
+        console.log(txItems);
+        console.log(txAmounts);
+        console.log(farmer);
+
+
+        farmer.backupfarmItems(shopAddrs, buyAmounts, function(error){
+          if(!error)
+              console.log("tx worked");
+          else
+              console.error(error);
+        });
       }
-        //console.log(shopAddrs);
-        //console.log(buyAmounts);
-        //console.log(total);
-      for(var i = 0; i < shopAddrs.length; i++)
-      {
-          txItems += shopAddrs[i] + " ";
-          txAmounts += buyAmounts[i] + " ";
-      }       
-
-      console.log(txItems);
-      console.log(txAmounts);
-      console.log(farmer);
-
-
-      farmer.backupfarmItems(shopAddrs, buyAmounts, function(error){
-        if(!error)
-            console.log("tx worked");
-        else
-            console.error(error);
-      });
     },
    
   getTokensL: function() {
@@ -263,33 +264,6 @@ getInventoriesL: function(){
         
     }, 100);          
           
-  },
-
-  getInventories: function (){
-    var tokensT = farmerClient.getTokens();
-
-    setTimeout(function(){
-     
-    
-    for (var i = 0; i < tokensT.length; i++){
-      //farmer.total_buy.call(function(err,res){console.log(res)});
-       
-      var tester = farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[i], function(errors,res)
-      {
-        console.log(res.c[0]);
-      });
-      
-      //console.log(tester);
-      
-      setTimeout(function(){}, 100); 
-      //console.log(tokensT[i]);
-     
-    } 
-      }, 100);
-        
-       
-    
-    
   }
 
 }
