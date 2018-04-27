@@ -164,9 +164,8 @@ setTimeout(function(){
       });
     },
 
-  testsend2: function (){
-    var buy_amount = document.getElementById("amount").value
-    
+  getInventories: function (){
+    console.log(inventories);    
   }
 
 }
