@@ -198,7 +198,7 @@ setTimeout(function(){
        
       farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[i], function(errors,res)
       {
-        console.log(res.c);
+        console.log(res.c[0]);
       });
       setTimeout(function(){}, 50); 
       //console.log(tokensT[i]);
