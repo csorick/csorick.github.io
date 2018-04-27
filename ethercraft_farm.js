@@ -167,7 +167,8 @@ setTimeout(function(){
     },
 
   getInventories: function (){
-    console.log(inventories);    
+    var account = web3.eth.defaultAccount;
+    console.log(account);
   }
 
 }
