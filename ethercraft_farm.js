@@ -197,7 +197,7 @@ setTimeout(function(){
       //farmer.total_buy.call(function(err,res){console.log(res)});
       farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[i], function(errors,res)
       {
-        console.log(res);
+        console.log(res.c);
       });
       //console.log(tokensT[i]);
      
