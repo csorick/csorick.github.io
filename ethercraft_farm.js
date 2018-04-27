@@ -95,11 +95,12 @@ setTimeout(function(){
       }, 100);
     },
 
-    getWithdraws: function () {    
+    getWithdraws: function () {
+      var tokenAddrs = new Array();
       setTimeout(function(){  
         //var items = document.getElementsByClassName("checker");
         //var amounts = document.getElementsByClassName("farm-count");
-        var tokenAddrs = new Array();
+        
 
         for (var i = 0; i < items.length; i++){
             if(items[i].checked){                        
@@ -107,10 +108,11 @@ setTimeout(function(){
             }
         }      
         
-        console.log(tokenAddrs);
-        return tokenAddrs;
+        //console.log(tokenAddrs);
+        
         
       }, 100);
+      return tokenAddrs;
       
     },
    
