@@ -108,9 +108,10 @@ setTimeout(function(){
         }      
         
         console.log(tokenAddrs);
+        return tokenAddrs;
         
       }, 100);
-      return tokenAddrs;
+      
     },
 
     testsend1: function (){
