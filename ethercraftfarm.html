@@ -60,11 +60,12 @@ function getInventoriesL(){
         console.log(tokensT);
         setTimeout(function(){
             console.log("this is individual tokensT" + tokensT[0]);
-
-            farmer2.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[0], function(errors, res)
-            {
-              console.log("this is inside token amount " + res.c[0]);
-            });
+            for (var i = 0; i < tokensT.length; i++){
+                farmer2.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[0], function(errors, res)
+                {
+                  console.log("this is inside token amount " + res.c[0]);
+                });
+            }
         }, 100); 
     }, 100);          
           
