@@ -197,8 +197,8 @@ setTimeout(function(){
       {
         console.log(res);
       });*/
-      console.log(tokensT[i]);
-      inventories[i].set
+      //console.log(tokensT[i]);
+     
     }
     
   }
