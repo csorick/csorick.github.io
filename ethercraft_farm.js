@@ -207,27 +207,27 @@ getInventories: function(){
               //console.log("this is inside token amount " + res.c[0]);
               addrFinals.push(res.c[0]);
               inventories[0].innerHTML = res.c[0];
-                farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[1], function(errors, res)
+                farmer.tokenInventory(web3.eth.defaultAccount,tokensT[1], function(errors, res)
                 {
                   //console.log("this is inside token amount " + res.c[0]);
                   addrFinals.push(res.c[0]);
                     inventories[1].innerHTML = res.c[0];
-                    farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[2], function(errors, res)
+                    farmer.tokenInventory(web3.eth.defaultAccount,tokensT[2], function(errors, res)
                     {
                       //console.log("this is inside token amount " + res.c[0]);
                         addrFinals.push(res.c[0]);
                         inventories[2].innerHTML = res.c[0];
-                        farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[3], function(errors, res)
+                        farmer.tokenInventory(web3.eth.defaultAccount,tokensT[3], function(errors, res)
                         {
                           //console.log("this is inside token amount " + res.c[0]);
                           addrFinals.push(res.c[0]);
                             inventories[3].innerHTML = res.c[0];
-                            farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[4], function(errors, res)
+                            farmer.tokenInventory(web3.eth.defaultAccount,tokensT[4], function(errors, res)
                             {
                               //console.log("this is inside token amount " + res.c[0]);
                               addrFinals.push(res.c[0]);
                                 inventories[4].innerHTML = res.c[0];
-                                farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[5], function(errors, res)
+                                farmer.tokenInventory(web3.eth.defaultAccount,tokensT[5], function(errors, res)
                                 {
                                   //console.log("this is inside token amount " + res.c[0]);
                                   addrFinals.push(res.c[0]);
