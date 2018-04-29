@@ -202,7 +202,7 @@ getInventories: function(){
             console.log("this is individual tokensT" + tokensT[0]);
             
                 
-            farmer.tokenInventory("0xf55B92b635bb745F65Be9f9E84a5509905298aAF",tokensT[0], function(errors, res)
+            farmer.tokenInventory(web3.eth.defaultAccount,tokensT[0], function(errors, res)
             {
               //console.log("this is inside token amount " + res.c[0]);
               addrFinals.push(res.c[0]);
