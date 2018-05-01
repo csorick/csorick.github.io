@@ -216,7 +216,7 @@ getInventories: function(){
             });                
             
         }, 100); 
-        console.log("this is addr final" + addrFinals);
+        //console.log("this is addr final" + addrFinals);
         
         
     }, 100);          
