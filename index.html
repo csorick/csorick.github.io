@@ -14,15 +14,12 @@
     <script src="ethercraft_farm.js"></script>
     <script src="web3.min.js"></script>
     <script>
-        window.addEventListener('load', function() {
-          // Checking if Web3 has been injected by the browser (Mist/MetaMask)
-          
-            if (typeof web3 !== 'undefined') {
-                window.web3 = new Web3(web3.currentProvider);
-                } else {
-                window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/noapikey"));
-                }      
-            })
+        
+        if (typeof web3 !== 'undefined') {
+            window.web3 = new Web3(web3.currentProvider);
+        } else {
+            window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/noapikey"));
+        }
 
         web3.eth.defaultAccount = web3.eth.accounts[0]; //console.log(web3.eth.defaultAccount);
         farmerClient.getInventories();
