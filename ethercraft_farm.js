@@ -67,7 +67,7 @@ setTimeout(function(){
             }
         }
 
-        if(total > 150)
+        if(total > 175)
           farmbutton.style.backgroundColor = "red";
         else{
           farmbutton.style.backgroundColor ="rgb(230, 230, 230)";
@@ -124,7 +124,7 @@ setTimeout(function(){
           }
       }
       if (!shopAddrs.length == 0){
-        if(total > 150)
+        if(total > 175)
           farmbutton.style.backgroundColor = "red";
         else{
           farmbutton.style.backgroundColor ="rgb(230, 230, 230)";
