@@ -174,7 +174,7 @@ getInventories: function(){
         //console.log(tokensT);
         var addrFinals = new Array();
         setTimeout(function(){
-            console.log("this is individual tokensT" + tokensT[0]);
+            //console.log("this is individual tokensT" + tokensT[0]);
             
                 
             farmer.tokenInventory(web3.eth.defaultAccount,tokensT[0], function(errors, res)
