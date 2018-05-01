@@ -112,7 +112,7 @@ setTimeout(function(){
           if(items[i].checked){            
             if(!amounts[i].value){
               total+=0;
-              console.log(items[i].value + "is undefined");
+              //console.log(items[i].value + "is undefined");
             }
             else if(amounts[i].value > 0){
               total += parseInt(amounts[i].value);
@@ -136,9 +136,9 @@ setTimeout(function(){
             txAmounts += buyAmounts[i] + " ";
         }       
 
-        console.log(txItems);
-        console.log(txAmounts);
-        console.log(farmer);
+        //console.log(txItems);
+        //console.log(txAmounts);
+        //console.log(farmer);
 
 
         farmer.backupfarmItems(shopAddrs, buyAmounts, function(error){
@@ -170,8 +170,8 @@ getInventories: function(){
         
     setTimeout(function(){
         var tokensT = farmerClient.getTokens();
-        console.log("dog test");
-        console.log(tokensT);
+        //console.log("dog test");
+        //console.log(tokensT);
         var addrFinals = new Array();
         setTimeout(function(){
             console.log("this is individual tokensT" + tokensT[0]);
