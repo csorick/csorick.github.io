@@ -21,6 +21,7 @@
                 window.web3 = new Web3(web3.currentProvider);
             } else {
                 window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/xcnlDvXNixgSS9Hq6i1t"));
+                console.log("tester");
             }
 
            if (++x === 5) {
@@ -28,7 +29,7 @@
            }
         }, 200);
         
-        
+        web3.eth.defaultAccount = web3.eth.accounts[0]; //console.log(web3.eth.defaultAccount);
         
 
         
