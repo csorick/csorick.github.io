@@ -1,85 +1,199 @@
-<h1>Hello test</h1>
+
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
+    <title>Ethercraft Farmer</title>
+    <link href="items.css" rel="stylesheet" type="text/css" >
+    <link href="pure-min.css" rel="stylesheet" type="text/css" >
+    <link href="gridtester.css" rel="stylesheet" type="text/css" >
+    <link href="grids-responsive.css" rel="stylesheet" type="text/css" >
+    <link href="RPGUI-master/dist/rpgui.css" rel="stylesheet" type="text/css" >
+    <link href="farmer.css" rel="stylesheet" type="text/css" >
+    <script src="ethercraft_farm.js"></script>
     <script src="web3.min.js"></script>
     <script>
-      window.addEventListener('load', function() {
-
+        window.addEventListener('load', function() {
           // Checking if Web3 has been injected by the browser (Mist/MetaMask)
           
-           if (typeof web3 !== 'undefined') {
-             window.web3 = new Web3(web3.currentProvider);
-           } else {
-            window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/noapikey"));
-           }
-      
+            if (typeof web3 !== 'undefined') {
+                window.web3 = new Web3(web3.currentProvider);
+                } else {
+                window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/noapikey"));
+                }      
+            })
 
-        })
-
-
-     
+        web3.eth.defaultAccount = web3.eth.accounts[0]; //console.log(web3.eth.defaultAccount);
+        farmerClient.getInventories();
     </script>
-
-     <script>
-         web3.eth.defaultAccount = web3.eth.accounts[0];
-         //console.log(web3.eth.defaultAccount);
-         
-         var farmerContract = web3.eth.contract([{"constant":false,"inputs":[{"name":"shop_addresses","type":"address[]"},{"name":"buy_amounts","type":"uint256[]"}],"name":"farmItems2","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"shops","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"shop_addresses","type":"address[]"},{"name":"token_addresses","type":"address[]"}],"name":"set_Shops","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"shop_addresses","type":"address[]"}],"name":"initialBuy","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"total_buy","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"token_addresses","type":"address[]"}],"name":"withdrawTokens","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"address"}],"name":"tokenInventory","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"shop_addresses","type":"address[]"},{"name":"buy_amounts","type":"uint256[]"}],"name":"farmItems","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"buy_val","type":"uint256"}],"name":"set_Total","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"gas_val","type":"uint256"}],"name":"set_Gas","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"shop_addresses","type":"address[]"},{"name":"buy_amounts","type":"uint256[]"}],"name":"backupfarmItems","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"gas_amount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"anonymous":false,"inputs":[{"indexed":true,"name":"previousOwner","type":"address"},{"indexed":true,"name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"}]);
-         
-         var farmer = farmerContract.at('0xce3a7713642bc4b7012f5a46e7599fcf54cb63c7');
-         console.log("this is farmer");
-         console.log(farmer);
-         
-        function getBalance(){
-            web3.eth.defaultAccount = web3.eth.accounts[0];
-            console.log(web3.eth.defaultAccount);
-        }
-        
-        
-         
-        function testsend1(){
-            var buy_amount = document.getElementById("amount").value
-            farmer.pepFarm('0x7B9C37cA42c48e131b81475B3520b81327538B7d', '0xd0c1f00e652046ad0b67290aaa28139c0e66a2ef', buy_amount, function(error){
-                if(!error)
-                    console.log("tx worked");
-                else
-                    console.error(error);
-            });
-        }
-         
-         
-         function send() {
-         web3.eth.sendTransaction({
-            from: web3.eth.defaultAccount,
-            to: '0x8d959FF07A8eA75a51a1CD3D777775bD76a1dE84'
-          }, function(error, result) {
-            if (!error) {
-              console.log("this worked");
-            } else {
-              console.log("this broke");
-            }
-          })
-        }
+    <!--<![endif]-->
 
 
-    </script>
-
+    <!--<![endif]-->
 </head>
 <body>
-   <h1>ETH Balance Fetcher</h1>
-    <p>Enter your Ethereum Address:</p>
-    <input type="text" size="50" id="address" />
-    <input type="number" name="quantity" min="1" max="100" id="amount">
-    <button type="button" onClick="getBalance()">Get Balance</button>
-     <button type="button" onClick="send();">send test</button>
-    <br />
-    <br />
-    <div id="output"></div>
+
+<div class="rpgui-content" style="overflow-y: scroll">
+
+    <img id="logo-img" src="imgs/farmer-logo-1.png">
+
+    <div class="menu-1">
+        <button class="button-secondary pure-button" onclick="farmerClient.showHelper();">HOW TO FARM</button>
+
+        <a href="https://etherscan.io/address/0x85d29c8126fa8ce5fe26e558feba5969fd0b2660"><button class="button-secondary pure-button">CONTRACT SOURCE</button></a>
+    </div>
+
+    <div class="menu">
+        <button class="button-success pure-button helper">Current Limits: 8 unique items.  175 total items</button>
+        <button class="button-warning pure-button" onclick="farmerClient.getInventories();">REFRESH INVENTORY</button>
+    </div>
+
+    <div class="menu">
+        <button class="button-primary pure-button" id="farmbutton" onclick="farmerClient.farmItems();">FARM</button>
+        <button class="button-primary pure-button" id="withdrawbutton" onclick="farmerClient.getWithdraws();">WITHDRAW</button>        
+    </div>
+
+    <div class="rpgui-container framed center withdraw-screen" id="helper1" style="height:900px; width:780px; text-align: left;">
+        <h1 div class="item-name">HOW TO USE THIS FARMER</h1>
+        <p class="helper">1)  Enter the amount of an item you want to farm.</p>
+        <p class="helper">2)  Check the checkbox for that item.</p>
+        <p class="helper">3)  Hit the Farm button and approve the transaction through metamask.</p>
+        <p class="helper">4)  Wait for your transaction to be confirmed then hit the Refresh Inventory button</p>
+        <p class="helper">5)  Check the box of the item you want to withdraw.</p>
+        <p class="helper">6)  Hit the Withdraw button and approve the transaction through metamask.</p>
+        <p class="helper">7)  Once the transaction is confirmed the tokens will be transfered to your ETH address</p>
+        <p>--------------------------------------------------------</p>
+        <h1 div class="item-name">FOR MULTIPLE ITEMS</h1>
+        <p class="helper">1)  This farmer can farm multiple items at once.  Check the checkbox on the items you want to farm and enter the amount to farm for each item.  Then hit the farm button.</p>
+        <p class="helper">2)  This farmer can also withdraw multiple items at once.  Check the checkbox for each item you want to withdraw that you have a non-zero balance of.  Then hit the withdraw button.</p>
+        <p>--------------------------------------------------------</p>
+        <h1 div class="item-name">LIMITS</h1>
+        <p class="helper">1)  MAX COMBINED FARM AMOUNT PER FARM = <button class="button-success pure-button helper">175 items</button></p>
+        <p class="helper">2)  MAX UNIQUE ITEMS PER FARM = <button class="button-success pure-button helper">8 items</button></p>
+        <p class="helper">Click the HOW TO FARM button again to hide.</p>
+    </div>
+
+
+
+    <div id="client-content">
+        <div id="shop-grid" class="pure-g">
+            <shop-item itemid="146">
+                <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-4 rpgui-container shop-item  " style="">
+
+                    <div class="wrapper">
+                        <div class="item-price-wrapper">
+                            <div class="rpgui-icon item-146"></div>
+                            <div class="item-name ">Rope Dart</div>
+                            <div class="item-type">Common Weapon</div>
+                            <div class="total"></div>
+                            <input class="farmer-screen farm-count" type="number" value="0" min="0" max="150" name="FirstName" placeholder="0-150" style="width: 150px;">
+                            <label class="c-container">
+                                <input class="checker" type="checkbox" value="0x4b72ACC43c984da449E79fA960E8EfD3Ef104e050xc168137461b208285CD7598FC97097ae833DF5c2">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </shop-item>
+            <shop-item itemid="147">
+                <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-4 rpgui-container shop-item  " style="">
+
+                    <div class="wrapper">
+                        <div class="item-price-wrapper">
+                            <div class="rpgui-icon item-147"></div>
+                            <div class="item-name ">Chain Whip</div>
+                            <div class="item-type">Common Weapon</div>
+                            <div class="total"></div>
+                            <input class="farmer-screen farm-count" type="number" value="0" min="0" max="150" name="FirstName" placeholder="0-150" style="width: 150px;">
+                            <label class="c-container">
+                                <input class="checker" type="checkbox" value="0x0D36aE1A55dF83CE573860e36b329b934827536E0xaFa19AA194abDA930AF284dcE1B1e25514EDFA9b">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </shop-item>
+            <shop-item itemid="151">
+                <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-4 rpgui-container shop-item  " style="">
+
+                    <div class="wrapper">
+                        <div class="item-price-wrapper">
+                            <div class="rpgui-icon item-151"></div>
+                            <div class="item-name ">Baozi</div>
+                            <div class="item-type">Common Consumable</div>
+                            <div class="total"></div>
+                            <input class="farmer-screen farm-count" type="number" value="0" min="0" max="150" name="FirstName" placeholder="0-150" style="width: 150px;">
+                            <label class="c-container">
+                                <input class="checker" type="checkbox" value="0xdAedB83f24811bf585aAA01e714F6D46951eD6ff0x55F65E9C5C1b92378497101fDb73f1BCb584B409">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </shop-item>
+            <shop-item itemid="152">
+                <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-4 rpgui-container shop-item  " style="">
+
+                    <div class="wrapper">
+                        <div class="item-price-wrapper">
+                            <div class="rpgui-icon item-152"></div>
+                            <div class="item-name ">Lotus Root</div>
+                            <div class="item-type">Uncommon Consumable</div>
+                            <div class="total"></div>
+                            <input class="farmer-screen farm-count" type="number" value="0" min="0" max="150" name="FirstName" placeholder="0-150" style="width: 150px;">
+                            <label class="c-container">
+                                <input class="checker" type="checkbox" value="0xEa37cFD9F93555910157FFA9b0e707f1597087e10xf003f8485bDc85F377827270179A64310Ccd26a5">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </shop-item>
+
+             <shop-item itemid="156">
+                <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-4 rpgui-container shop-item  " style="">
+
+                    <div class="wrapper">
+                        <div class="item-price-wrapper">
+                            <div class="rpgui-icon item-156"></div>
+                            <div class="item-name ">Common Jade Box</div>
+                            <div class="item-type">Common Loot</div>
+                            <div class="total"></div>
+                            <input class="farmer-screen farm-count" type="number" value="0" min="0" max="150" name="FirstName" placeholder="0-150" style="width: 150px;">
+                            <label class="c-container">
+                                <input class="checker" type="checkbox" value="0xE0d5EF9dBD7147e2D133aa8CB6d6C53778228E4f0x6c170dC797014eA4E0900DF58e4AF67674cA54e8">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </shop-item>
+
+             <shop-item itemid="171">
+                <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-4 rpgui-container shop-item  " style="">
+
+                    <div class="wrapper">
+                        <div class="item-price-wrapper">
+                            <div class="rpgui-icon item-171"></div>
+                            <div class="item-name ">Bai Zhu</div>
+                            <div class="item-type">Uncommon Consumable</div>
+                            <div class="total"></div>
+                            <input class="farmer-screen farm-count" type="number" value="0" min="0" max="150" name="FirstName" placeholder="0-150" style="width: 150px;">
+                            <label class="c-container">
+                                <input class="checker" type="checkbox" value="0xa72CAD07d7ADa6124564147ec65FD0F7BBde327c0x8F07CFE916c7e4713eBf72dc4054706557C22D7E">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </shop-item>
+
+
+        </div>
+    </div>
+</div>
+
 
 </body>
 </html>
