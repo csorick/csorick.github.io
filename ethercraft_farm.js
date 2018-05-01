@@ -55,7 +55,7 @@ setTimeout(function(){
             if(items[i].checked){            
               if(!amounts[i].value){
                 total+=0;
-                console.log(items[i].value + "is undefined");
+                //console.log(items[i].value + "is undefined");
               }
               else if(amounts[i].value > 0){
                 total += parseInt(amounts[i].value);
@@ -70,9 +70,9 @@ setTimeout(function(){
         else{
           farmbutton.style.backgroundColor ="rgb(230, 230, 230)";
         }
-        console.log(shopAddrs);
-        console.log(buyAmounts);
-        console.log(total);
+        //console.log(shopAddrs);
+        //console.log(buyAmounts);
+        //console.log(total);
       }, 100);
     },
 
@@ -88,7 +88,7 @@ setTimeout(function(){
         
       
       
-      console.log(tokenAddrs);
+      //console.log(tokenAddrs);
       farmer.withdrawTokens(tokenAddrs, function(error){
           if(!error)
               console.log("tx worked");
