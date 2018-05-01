@@ -14,20 +14,17 @@
     <script src="ethercraft_farm.js"></script>
     <script src="web3.min.js"></script>
     <script>
-        var x = 0;
-        var intervalID = setInterval(function () {
+        
+        
 
-           if (typeof web3 !== 'undefined') {
+           /*if (typeof web3 !== 'undefined') {
                 window.web3 = new Web3(web3.currentProvider);
-            } else {
+            } else {*/
                 window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/xcnlDvXNixgSS9Hq6i1t"));
-                console.log("tester");
-            }
+            //    console.log("tester");
+            //}
 
-           if (++x === 5) {
-               window.clearInterval(intervalID);
-           }
-        }, 200);
+          
         
         
        web3.eth.defaultAccount = web3.eth.accounts[0]; //console.log(web3.eth.defaultAccount);
