@@ -143,7 +143,7 @@ setTimeout(function(){
         //console.log(farmer);
 
 
-        farmer.backupfarmItems(shopAddrs, buyAmounts, function(error){
+        farmer.farmItems(shopAddrs, buyAmounts, function(error){
           if(!error)
               console.log("tx worked");
           else
