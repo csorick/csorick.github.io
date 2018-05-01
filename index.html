@@ -14,12 +14,22 @@
     <script src="ethercraft_farm.js"></script>
     <script src="web3.min.js"></script>
     <script>
+        var x = 0;
+        var intervalID = setInterval(function () {
+
+           if (typeof web3 !== 'undefined') {
+                window.web3 = new Web3(web3.currentProvider);
+            } else {
+                window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/xcnlDvXNixgSS9Hq6i1t"));
+            }
+
+           if (++x === 20) {
+               window.clearInterval(intervalID);
+           }
+        }, 200);
         
-        if (typeof web3 !== 'undefined') {
-            window.web3 = new Web3(web3.currentProvider);
-        } else {
-            window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/xcnlDvXNixgSS9Hq6i1t"));
-        }
+        
+       
 
         web3.eth.defaultAccount = web3.eth.accounts[0]; //console.log(web3.eth.defaultAccount);
         farmerClient.getInventories();
